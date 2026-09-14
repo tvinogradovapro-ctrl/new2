@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Напутствие — генератор поддержки</title>
+    <style>
+        :root {
+            --pantone-715c: #f58a1f;
+            --pantone-437c: #2b2a28;
+            --pantone-2577c: #7b3fa0;
+            --pantone-340c: #1b5e4a;
+            --pantone-blackc: #000000;
+            --pantone-cool-grey-1c: #e6e7e8;
+            --font: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --bg: #1f2937;
+            --card-bg: #2b2f3a;
+            --panel: #343a47;
+            --panel-hover: #3e4452;
+            --text: #f3f4f6;
+            --muted: #9ca3af;
+            --border: #4b5563;
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            --radius: 20px;
+            --radius-sm: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            font-family: var(--font);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .farewell-section {
+            max-width: 700px;
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 48px 56px 40px;
+            position: relative;
+            overflow: hidden;
+            align-self: center;
+        }
+
+        .farewell-section::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(245, 138, 31, 0.2), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .farewell-text {
+            font-size: 17px;
+            color: #e5e7eb;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .farewell-text strong {
+            color: #ffffff;
+        }
+
+        .contact-block {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .contact-block p {
+            margin-bottom: 6px;
+            color: #e5e7eb;
+        }
+
+        .contact-block strong {
+            color: #ffffff;
+        }
+
+        .generator-box {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 24px 28px;
+            margin-top: 28px;
+            position: relative;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .generator-box:hover {
+            border-color: var(--pantone-715c);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .generator-box h3 {
+            font-size: 19px;
+            font-weight: 650;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .generator-box p {
+            color: var(--muted);
+            margin-bottom: 18px;
+            font-size: 15px;
+        }
+
+        .message-display {
+            background: rgba(27, 94, 74, 0.15);
+            border: 1px solid rgba(27, 94, 74, 0.4);
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #c3e6d0;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--pantone-715c);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--font);
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background: #d97706;
+            transform: translateY(-1px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .counter {
+            margin-top: 14px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        @media (max-width: 640px) {
+            .farewell-section {
+                padding: 32px 24px;
+            }
+            h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="farewell-section">
+        <h2>12. Напутствие</h2>
+
+        <div class="farewell-text">
+            <p><strong>Спасибо за внимание!</strong></p>
+            <p>Теперь ты знаешь, как устроен план развития и как по нему двигаться. Впереди много интересного, и мы уверены, что у тебя получится.</p>
+        </div>
+
+        <div class="contact-block">
+            <p>Если остались вопросы, напиши менеджеру по карьерному развитию.</p>
+            <p><strong>Контакт: [место для данных — внести в iSpring]</strong></p>
+        </div>
+
+        <div class="generator-box">
+            <h3>✨ Персональное напутствие</h3>
+            <p>Нажми на кнопку, чтобы получить дополнительную порцию поддержки.</p>
+
+            <div class="message-display" id="message-display">
+                Ты уже сделал важный шаг — начни с мысли, которая откликается.
+            </div>
+
+            <button class="btn" id="generate-btn">Сгенерировать напутствие</button>
+            <div class="counter" id="counter">Твоё напутствие ещё не выбрано</div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const messages = [
+                "Помни: ты уже в резерве, а это значит, что в тебя верят. Осталось только подтвердить это действиями.",
+                "Не сравнивай свой темп с другими. У каждого свой путь, и твой — точно не хуже.",
+                "Ошибки на пути — это не сбой, а часть обучения. Важно не остановиться.",
+                "Ты не один. Если сложно, всегда можно написать менеджеру или куратору — они на твоей стороне.",
+                "Маленький шаг каждый день лучше большого рывка раз в месяц. Продолжай двигаться.",
+                "Развитие — это не про скорость, а про устойчивость. Ты справишься.",
+                "Если кажется, что впереди слишком много работы, посмотри, как много ты уже сделал. Это впечатляет.",
+                "Твоя будущая должность — это не награда, а следующий этап твоего роста. И ты к нему готов.",
+                "Планы нужны, чтобы их корректировать. Если что-то идёт не так, просто вернись к курсу и продолжай.",
+                "Сегодня ты резервист, завтра — выпускник. Всё в твоих руках.",
+                "Не забывай отдыхать. Устойчивый рост важнее быстрого выгорания.",
+                "Ты стал сильнее, просто пройдя этот курс. Остальное — дело техники.",
+                "Успех — это не прямая линия. Иногда нужно сделать паузу, чтобы потом ускориться.",
+                "Каждое выполненное задание — это кирпичик в фундамент твоей новой роли. Ты строишь надёжно.",
+                "Доверяй себе. Если ты решил участвовать в резерве, значит, у тебя есть для этого основания.",
+                "Твой опыт и знания уже ценны. Этот план помогает им проявиться.",
+                "Не бойся задавать вопросы. Вопросы — признак зрелости, а не слабости.",
+                "Сегодня ты учишься, завтра будешь учить других. Это крутой путь.",
+                "Даже если получится не с первого раза, это не отменяет твоего прогресса.",
+                "Ты на верном пути. Просто продолжай идти."
+            ];
+
+            const messageDisplay = document.getElementById('message-display');
+            const generateBtn = document.getElementById('generate-btn');
+            const counter = document.getElementById('counter');
+            let count = 0;
+
+            generateBtn.addEventListener('click', () => {
+                const randomIndex = Math.floor(Math.random() * messages.length);
+                messageDisplay.textContent = messages[randomIndex];
+                count++;
+                counter.textContent = `Напутствий получено: ${count}`;
+            });
+        })();
+    </script>
+</body>
+</html>
